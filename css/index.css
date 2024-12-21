@@ -38,7 +38,7 @@ main {
     transform-origin: top;
     background-size: cover;
     background-position: center;
-    z-index: 1;
+    z-index: 0;
 }
 
 .background::after {
@@ -146,4 +146,76 @@ main {
 .section:hover .fabcons:hover {
     color: white;
     transition: none;
+}
+
+
+/* Mobile view */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .section {
+        width: 100vw;
+        height: calc(100vh/3);
+    }
+
+    .background {
+        width: 100vw;
+        height: calc(100vh/3);
+        transform-origin: right;
+    }
+
+    .section:hover .background {
+        transform: none;
+    }
+
+    .title-container {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 50%;
+    }
+
+    .title {
+        color: white;
+        transition: none;
+    }
+
+    .section:hover .title-container {
+        transform: none;
+    }
+
+    .section:hover .title {
+        color: white;
+    }
+
+    .section:hover .title:hover {
+        color: white;
+        transition: none;
+    }
+
+    .section:hover .fabcons:hover {
+        color: rgba(255, 255, 255, 0.5);
+        transition: none;
+    }
+
+    .content-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0);
+        transform: none;
+        transition: none;
+        z-index: 3;
+    }
+
+    .section:hover .content-container {
+        transform: none;
+    }
 }
