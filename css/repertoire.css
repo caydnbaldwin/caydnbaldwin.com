@@ -264,7 +264,11 @@ img {
     }
 
     .navbar {
-        width: 13vw;
+        width: 15vw;
+    }
+
+    .navbar a {
+        padding: 0;
     }
 
     .background {
@@ -273,7 +277,13 @@ img {
     }
 
     .background::after {
+        background-position: center center;
         transition: none;
+        transform: scale(2);
+    }
+
+    .background::before {
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .section:hover .background {
