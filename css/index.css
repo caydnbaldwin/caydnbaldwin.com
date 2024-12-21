@@ -1,0 +1,149 @@
+/* reset scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* main */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgba(37, 75, 37, 0.5);
+}
+
+/* section */
+.section {
+    width: calc(100vw/3);
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.section a {
+    text-decoration: none;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+    transform-origin: top;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
+}
+
+.section:hover .background {
+    transform: translateY(-100vh);
+}
+
+/* background image */
+.section-business .background {
+    background-image: url(/assets/backgroundResume.jpg);
+}
+
+.section-projects .background {
+    background-image: url(/assets/backgroundProjects.jpg);
+}
+
+.section-repertoire .background {
+    background-image: url(/assets/backgroundRepertoire.jpg);
+}
+
+/* dark overlay */
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+/* title container */
+.title-container {
+    position: absolute;
+    left: 0;
+    top: 46vh;
+    width: calc(100vw/3);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.section:hover .title-container {
+    transform: translateY(-10vh);
+}
+
+/* content container */
+.content-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(37, 73, 37, 0.5);
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.section:hover .content-container {
+    transform: translateY(0);
+}
+
+/* title and content styles */
+.title {
+    color: white;
+    font-size: larger;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.section:hover .title {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.fabcons {
+    padding-top: 5%;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10vh;
+    text-decoration: none;
+}
+
+.section:hover .title:hover,
+.section:hover .fabcons:hover {
+    color: white;
+    transition: none;
+}

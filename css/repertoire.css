@@ -1,0 +1,259 @@
+/* Reset scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgba(37, 75, 37, 0.5);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 8vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbar a {
+    font-size: smaller;
+    color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.navbar a:hover,
+.section-victory:hover ~ .navbar .nav-victory,
+.section-serenity:hover ~ .navbar .nav-serenity,
+.section-why-music:hover ~ .navbar .nav-why-music,
+.section-yearning:hover ~ .navbar .nav-yearning,
+.section-majesty:hover ~ .navbar .nav-majesty,
+.section-about:hover ~ .navbar .nav-about {
+    color: white;
+    font-weight: bold;
+}
+
+/* Section */
+.section {
+    width: 100vw;
+    height: calc(100vh/3);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-about {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh/3);
+    transition: all 0.5s ease;
+    transform-origin: right;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
+}
+
+.section:hover .background {
+    transform: scale(1, 1);
+    width: 20vw;
+    left: 80vw;
+}
+
+.section:hover .background::before {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Background images */
+.section-victory .background::after {
+    background-image: url(/assets/victory.jpg);
+}
+
+.section-serenity .background::after {
+    background-image: url(/assets/serenity.png);
+}
+
+.section-why-music .background::after {
+    background-image: url(/assets/why-music.jpg);
+}
+
+.section-yearning .background::after {
+    background-image: url(/assets/yearning.png);
+}
+
+.section-majesty .background::after {
+    background-image: url(/assets/majesty.jpg);
+}
+
+/* Dark overlay */
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: background-color 0.5s ease;
+}
+
+/* Title container */
+.title-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.section:hover .title-container {
+    width: 20%;
+}
+
+/* Content container */
+.content-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(37, 73, 37, 0.5);
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+}
+
+.content-container-about {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(37, 73, 37, 0.5);
+}
+
+.content-container-about span {
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.section:hover .content-container {
+    transform: translateX(-25%);
+}
+
+/* Title and content styles */
+.title {
+    color: white;
+    font-size: larger;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.section:hover .title {
+    color: rgba(0, 0, 0, 0);
+}
+
+main p {
+    color: white;
+    padding: 2vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-size: smaller;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}
+
+.fabcons-container {
+    margin-left: 9vw;
+    display: flex;
+}
+
+.fabcons-container-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.fabcons {
+    padding: 1vw;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10vh;
+    text-decoration: none;
+}
+
+.fabcons:hover {
+    color: white
+}
+
+img {
+    width: 20vw;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.content-container-about p {
+    width: 50%;
+}
