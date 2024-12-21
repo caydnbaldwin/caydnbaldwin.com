@@ -286,6 +286,7 @@ img {
 
     .navbar {
         width: 20vw;
+        height: 100dvh;
     }
 
     .navbar a {
