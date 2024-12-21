@@ -104,26 +104,47 @@ main {
 
 .section:hover .background::before {
     background-color: rgba(0, 0, 0, 0);
+    scale: 1;
 }
 
 /* Background images */
 .section-victory .background::after {
-    background-image: url(/assets/victory.jpg);
+    background-image: url(/assets/mobile-victory.jpg);
 }
 
 .section-serenity .background::after {
-    background-image: url(/assets/serenity.png);
+    background-image: url(/assets/mobile-serenity.png);
 }
 
 .section-why-music .background::after {
-    background-image: url(/assets/why-music.jpg);
+    background-image: url(/assets/mobile-why-music.png);
 }
 
 .section-yearning .background::after {
-    background-image: url(/assets/yearning.png);
+    background-image: url(/assets/mobile-yearning.jpg);
 }
 
 .section-majesty .background::after {
+    background-image: url(/assets/mobile-majesty.jpg);
+}
+
+.section-victory:hover .background::after {
+    background-image: url(/assets/victory.jpg);
+}
+
+.section-serenity:hover .background::after {
+    background-image: url(/assets/serenity.png);
+}
+
+.section-why-music:hover .background::after {
+    background-image: url(/assets/why-music.jpg);
+}
+
+.section-yearning:hover .background::after {
+    background-image: url(/assets/yearning.png);
+}
+
+.section-majesty:hover .background::after {
     background-image: url(/assets/majesty.jpg);
 }
 
@@ -279,7 +300,47 @@ img {
     .background::after {
         background-position: center center;
         transition: none;
-        transform: scale(2);
+        transform: scale(1);
+    }
+
+    .section-victory .background::after {
+        background-image: url(/assets/mobile-victory.jpg);
+    }
+
+    .section-serenity .background::after {
+        background-image: url(/assets/mobile-serenity.png);
+    }
+
+    .section-why-music .background::after {
+        background-image: url(/assets/mobile-why-music.png);
+    }
+
+    .section-yearning .background::after {
+        background-image: url(/assets/mobile-yearning.jpg);
+    }
+
+    .section-majesty .background::after {
+        background-image: url(/assets/mobile-majesty.jpg);
+    }
+
+    .section-victory:hover .background::after {
+        background-image: url(/assets/mobile-victory.jpg);
+    }
+
+    .section-serenity:hover .background::after {
+        background-image: url(/assets/mobile-serenity.png);
+    }
+
+    .section-why-music:hover .background::after {
+        background-image: url(/assets/mobile-why-music.png);
+    }
+
+    .section-yearning:hover .background::after {
+        background-image: url(/assets/mobile-yearning.jpg);
+    }
+
+    .section-majesty:hover .background::after {
+        background-image: url(/assets/mobile-majesty.jpg);
     }
 
     .background::before {
